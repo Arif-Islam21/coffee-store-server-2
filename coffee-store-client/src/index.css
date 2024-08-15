@@ -2,10 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Rancho&display=swap");
-
-@layer base {
-  .rancho-regular {
-    font-family: "Rancho", cursive;
-  }
-}
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");

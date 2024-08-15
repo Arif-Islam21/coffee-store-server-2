@@ -4,6 +4,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { SiCoffeescript } from "react-icons/si";
 
 export default function Navbar() {
   return (
@@ -17,7 +18,10 @@ export default function Navbar() {
             className="text-center"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            Espresso Emporium
+            <div className="flex justify-center gap-2 items-center">
+              <SiCoffeescript />
+              <span className="font-rancho font-bold">Espresso Emporium</span>
+            </div>
           </Typography>
         </Toolbar>
       </AppBar>
