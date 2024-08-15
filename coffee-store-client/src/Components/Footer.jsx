@@ -19,7 +19,7 @@ const Footer = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex items-center justify-around p-10"
+        className="flex flex-col lg:flex-row items-center justify-around p-10"
       >
         <aside className="">
           <SiCoffeescript className="h-24 w-20 text-[#331A15]"></SiCoffeescript>
@@ -74,6 +74,19 @@ const Footer = () => {
             ></textarea>
           </div>
         </nav>
+      </footer>
+      <footer
+        style={{
+          backgroundImage:
+            "URL(https://img.freepik.com/free-photo/close-up-view-dark-fresh-roasted-coffee-beans-coffee-beans-background_141793-27283.jpg?size=626&ext=jpg&ga=GA1.1.1305675034.1693990964&semt=ais_hybrid)",
+        }}
+        className="footer footer-center text-base-content p-2"
+      >
+        <aside>
+          <p className="text-white font-raleway">
+            Copyright Espresso Emporium ! All Rights Reserved
+          </p>
+        </aside>
       </footer>
     </div>
   );
