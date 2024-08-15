@@ -18,7 +18,11 @@ const PopularProduct = () => {
           <BiSolidCoffee className="text-[#331A15] font-bold text-xl" />
         </button>
       </div>
-      <Productcard></Productcard>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-8">
+        <Productcard></Productcard>
+        <Productcard></Productcard>
+        <Productcard></Productcard>
+      </div>
     </div>
   );
 };
