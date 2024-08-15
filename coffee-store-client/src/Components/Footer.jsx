@@ -1,15 +1,44 @@
 import { SiCoffeescript } from "react-icons/si";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaLocationArrow,
+  FaPhone,
+  FaTwitter,
+} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="footer bg-neutral text-neutral-content p-10">
-        <aside>
-          <SiCoffeescript></SiCoffeescript>
-          <p>
-            ACME Industries Ltd.
-            <br />
-            Providing reliable tech since 1992
+      <footer className="footer bg-white p-10">
+        <aside className="">
+          <SiCoffeescript className="h-24 w-20 text-[#331A15]"></SiCoffeescript>
+          <p className="font-rancho text-2xl text-[#331A15] font-bold">
+            Espresso Emporium
+          </p>
+          <p className="font-raleway max-w-md py-2">
+            Always ready to be your friend. Come & Contact with us to share your
+            memorable moments, to share with your best companion.
+          </p>
+          <div className="py-2 grid grid-cols-4 gap-3">
+            <FaFacebook className="h-10 w-10 text-[#331A15]" />
+            <FaTwitter className="h-10 w-10 text-[#331A15]" />
+            <FaInstagram className="h-10 w-10 text-[#331A15]" />
+            <FaLinkedin className="h-10 w-10 text-[#331A15]" />
+          </div>
+          <h2 className="text-[#331A15] text-3xl font-rancho font-bold ">
+            Get In Touch
+          </h2>
+          <p className="flex items-center gap-2 font-semibold mt-2">
+            <FaPhone /> +88 0183 3668024
+          </p>
+          <p className="flex items-center gap-2 font-semibold mt-2">
+            <MdEmail /> arif.sojib2020@gmail.com
+          </p>
+          <p className="flex items-center gap-2 font-semibold mt-2">
+            <FaLocationArrow /> Araji Choraikhola , Mokterpara, Nilphamari
           </p>
         </aside>
         <nav>
