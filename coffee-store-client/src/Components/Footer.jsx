@@ -67,11 +67,14 @@ const Footer = () => {
               className="input bg-gray-200 w-full max-w-xl"
             />
           </div>
-          <div className="grid lg:min-w-96 py-2 max-w-md grid-flow-col gap-4">
+          <div className="flex flex-col  lg:min-w-96 py-2 max-w-md  gap-4">
             <textarea
               className="textarea bg-gray-200"
               placeholder="Message"
             ></textarea>
+            <button className="btn btn-outline max-w-36 font-bold text-[#331A15] border-[#331A15] border-2 rounded-3xl">
+              Send Message
+            </button>
           </div>
         </nav>
       </footer>
