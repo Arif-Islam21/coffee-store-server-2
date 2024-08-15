@@ -1,4 +1,5 @@
 import { BiSolidCoffee } from "react-icons/bi";
+import Productcard from "./Productcard";
 
 const PopularProduct = () => {
   return (
@@ -17,6 +18,7 @@ const PopularProduct = () => {
           <BiSolidCoffee className="text-[#331A15] font-bold text-xl" />
         </button>
       </div>
+      <Productcard></Productcard>
     </div>
   );
 };
