@@ -37,6 +37,12 @@ async function run() {
       .db("coffeeMasterDb")
       .collection("coffeeData");
 
+    app.get("/coffee", async (req, res) => {
+      const data = coffeeCollection.find();
+      const result = await data.toArray();
+      res.send(result);
+    });
+
     app.post("/coffee", async (req, res) => {
       const coffeeData = req.body;
       const result = await coffeeCollection.insertOne(coffeeData);

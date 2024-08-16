@@ -24,18 +24,6 @@ const AddCoffee = () => {
       photo,
     };
 
-    // fetch("http://localhost:5000/coffee", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(coffeeData),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
-
     fetch("http://localhost:5000/coffee", {
       method: "POST",
       headers: {

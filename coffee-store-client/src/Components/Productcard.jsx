@@ -1,28 +1,27 @@
 import { FaEye, FaPen } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 
-const Productcard = () => {
+const Productcard = ({ coff }) => {
+  const { name, chef, supplier, taste, category, details, photo } = coff;
+
   return (
     <div className="card card-side bg-base-100 max-w-xl px-8 py-4 my-4 shadow-xl">
       <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-          alt="Movie"
-        />
+        <img src={photo} alt="Movie" />
       </figure>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center lg:min-w-72 items-center">
         <div className="card-body flex justify-center">
           <div className="flex items-center gap-2">
             <h2 className="card-title">Name:</h2>
-            <p>Americano Coffee</p>
+            <p>{name}</p>
           </div>
           <div className="flex items-center gap-2">
             <h2 className="card-title">Chef:</h2>
-            <p>Ariful Islam</p>
+            <p>{chef}</p>
           </div>
           <div className="flex items-center gap-2">
-            <h2 className="card-title">Price:</h2>
-            <p>890TK</p>
+            <h2 className="card-title">Supplier:</h2>
+            <p>{supplier}</p>
           </div>
         </div>
       </div>

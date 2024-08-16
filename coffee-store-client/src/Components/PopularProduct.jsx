@@ -1,8 +1,18 @@
 import { BiSolidCoffee } from "react-icons/bi";
 import Productcard from "./Productcard";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const PopularProduct = () => {
+  const [coffee, setCoffee] = useState();
+  useEffect(() => {
+    fetch("http://localhost:5000/coffee")
+      .then((res) => res.json())
+      .then((data) => {
+        setCoffee(data);
+      });
+  }, []);
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center my-6">
@@ -22,9 +32,12 @@ const PopularProduct = () => {
         </Link>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-8">
+        {/* <Productcard></Productcard>
         <Productcard></Productcard>
-        <Productcard></Productcard>
-        <Productcard></Productcard>
+        <Productcard></Productcard> */}
+        {coffee?.map((coff) => (
+          <Productcard key={coff._id} coff={coff}></Productcard>
+        ))}
       </div>
     </div>
   );
