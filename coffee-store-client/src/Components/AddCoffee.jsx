@@ -1,5 +1,6 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { json, Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
   const handleAddCoffee = (event) => {
@@ -33,7 +34,15 @@ const AddCoffee = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
+        if (data?.acknowledged) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee Added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
       });
   };
 
