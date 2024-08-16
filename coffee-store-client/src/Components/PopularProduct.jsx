@@ -36,7 +36,12 @@ const PopularProduct = () => {
         <Productcard></Productcard>
         <Productcard></Productcard> */}
         {coffee?.map((coff) => (
-          <Productcard key={coff._id} coff={coff}></Productcard>
+          <Productcard
+            key={coff._id}
+            coffee={coffee}
+            setCoffee={setCoffee}
+            coff={coff}
+          ></Productcard>
         ))}
       </div>
     </div>

@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Productcard = ({ coff }) => {
+const Productcard = ({ coff, setCoffee, coffee }) => {
   const { _id, name, chef, supplier, taste, category, details, photo } = coff;
 
   const handleDelete = (_id) => {
@@ -17,7 +17,6 @@ const Productcard = ({ coff }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log(_id);
         fetch(`http://localhost:5000/coffee/${_id}`, {
           method: "DELETE",
         })
@@ -29,6 +28,8 @@ const Productcard = ({ coff }) => {
                 text: "Your coffee has been deleted.",
                 icon: "success",
               });
+              const remaining = coffee.filter((cof) => cof._id !== _id);
+              setCoffee(remaining);
             }
           });
       }
