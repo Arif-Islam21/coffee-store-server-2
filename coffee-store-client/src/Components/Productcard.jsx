@@ -1,9 +1,39 @@
 import { FaEye, FaPen } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Productcard = ({ coff }) => {
-  const { name, chef, supplier, taste, category, details, photo } = coff;
+  const { _id, name, chef, supplier, taste, category, details, photo } = coff;
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(_id);
+        fetch(`http://localhost:5000/coffee/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your coffee has been deleted.",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="card card-side bg-base-100 max-w-xl px-8 py-4 my-4 shadow-xl">
@@ -36,9 +66,12 @@ const Productcard = ({ coff }) => {
         >
           <FaPen />
         </Link>
-        <div className="h-10 w-10 bg-[#EA4744] text-white flex items-center justify-center text-xl rounded-md">
+        <button
+          onClick={() => handleDelete(_id)}
+          className="h-10 w-10 bg-[#EA4744] text-white flex items-center justify-center text-xl rounded-md"
+        >
           <MdDelete />
-        </div>
+        </button>
       </div>
     </div>
   );
