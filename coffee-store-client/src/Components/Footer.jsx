@@ -1,5 +1,5 @@
 import { SiCoffeescript } from "react-icons/si";
-import footerBg from "../../public/cool-background.png";
+import footerBg from "/cool-background.png";
 import {
   FaFacebook,
   FaInstagram,

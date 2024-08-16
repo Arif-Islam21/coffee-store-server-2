@@ -1,4 +1,4 @@
-import img from "../../public/1912.i211.035..coffee cup on table realistic.jpg";
+import img from "/1912.i211.035..coffee cup on table realistic.jpg";
 
 const Follow = () => {
   return (

@@ -1,10 +1,13 @@
 import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AddCoffee = () => {
   return (
     <div className="my-8">
       <div className="flex items-center gap-2 ml-4">
-        <FaArrowLeft></FaArrowLeft>
+        <Link to={"/"}>
+          <FaArrowLeft></FaArrowLeft>
+        </Link>
         <span className="font-rancho text-[#374151] text-xl font-bold blur-[1px]">
           Back to home
         </span>

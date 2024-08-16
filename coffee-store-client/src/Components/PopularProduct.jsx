@@ -1,5 +1,6 @@
 import { BiSolidCoffee } from "react-icons/bi";
 import Productcard from "./Productcard";
+import { Link } from "react-router-dom";
 
 const PopularProduct = () => {
   return (
@@ -11,12 +12,14 @@ const PopularProduct = () => {
         <h1 className="font-rancho text-5xl my-4 text-[#331A15] font-bold drop-shadow-sm blur-[1px]">
           Our Popular Products
         </h1>
-        <button className="flex justify-between bg-[#E3B577] my-4 items-center btn border-2 border-[#331A15]">
-          <span className="font-bold text-xl text-white font-rancho">
-            Add Coffee
-          </span>
-          <BiSolidCoffee className="text-[#331A15] font-bold text-xl" />
-        </button>
+        <Link to={"addCoffee"}>
+          <button className="flex justify-between bg-[#E3B577] my-4 items-center btn border-2 border-[#331A15]">
+            <span className="font-bold text-xl text-white font-rancho">
+              Add Coffee
+            </span>
+            <BiSolidCoffee className="text-[#331A15] font-bold text-xl" />
+          </button>
+        </Link>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-8">
         <Productcard></Productcard>
