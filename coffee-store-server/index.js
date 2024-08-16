@@ -37,9 +37,10 @@ async function run() {
       .db("coffeeMasterDb")
       .collection("coffeeData");
 
-    app.post("coffee", async (req, res) => {
+    app.post("/coffee", async (req, res) => {
       const coffeeData = req.body;
-      console.log(coffeeData);
+      const result = await coffeeCollection.insertOne(coffeeData);
+      res.send(result);
     });
 
     console.log(
