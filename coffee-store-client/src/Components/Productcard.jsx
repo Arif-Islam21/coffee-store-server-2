@@ -58,7 +58,10 @@ const Productcard = ({ coff, setCoffee, coffee }) => {
         </div>
       </div>
       <div className="flex flex-col justify-center">
-        <Link className="h-10 w-10 bg-[#D2B48C] text-white flex items-center justify-center text-xl rounded-md">
+        <Link
+          to={`/viewCoffee/${_id}`}
+          className="h-10 w-10 bg-[#D2B48C] text-white flex items-center justify-center text-xl rounded-md"
+        >
           <FaEye />
         </Link>
         <Link
