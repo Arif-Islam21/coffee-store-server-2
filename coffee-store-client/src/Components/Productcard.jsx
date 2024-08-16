@@ -1,5 +1,6 @@
 import { FaEye, FaPen } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Productcard = ({ coff }) => {
   const { name, chef, supplier, taste, category, details, photo } = coff;
@@ -26,12 +27,15 @@ const Productcard = ({ coff }) => {
         </div>
       </div>
       <div className="flex flex-col justify-center">
-        <div className="h-10 w-10 bg-[#D2B48C] text-white flex items-center justify-center text-xl rounded-md">
+        <Link className="h-10 w-10 bg-[#D2B48C] text-white flex items-center justify-center text-xl rounded-md">
           <FaEye />
-        </div>
-        <div className="h-10 w-10 bg-[#3C393B] my-6 text-white flex items-center justify-center text-xl rounded-md">
+        </Link>
+        <Link
+          to={"/updateCoffee"}
+          className="h-10 w-10 bg-[#3C393B] my-6 text-white flex items-center justify-center text-xl rounded-md"
+        >
           <FaPen />
-        </div>
+        </Link>
         <div className="h-10 w-10 bg-[#EA4744] text-white flex items-center justify-center text-xl rounded-md">
           <MdDelete />
         </div>
