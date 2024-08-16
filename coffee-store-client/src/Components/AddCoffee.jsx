@@ -1,7 +1,42 @@
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 
 const AddCoffee = () => {
+  const handleAddCoffee = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name = form.name.value;
+    const chef = form.chef.value;
+    const supplier = form.supplier.value;
+    const taste = form.taste.value;
+    const category = form.category.value;
+    const details = form.details.value;
+    const photo = form.photo.value;
+
+    const coffeeData = {
+      name,
+      chef,
+      supplier,
+      taste,
+      category,
+      details,
+      photo,
+    };
+
+    fetch("http://localhost:5000/coffee", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(coffeeData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div className="my-8">
       <div className="flex items-center gap-2 ml-4">
@@ -12,7 +47,7 @@ const AddCoffee = () => {
           Back to home
         </span>
       </div>
-      <form className="bg-[#F4F3F0] px-32 py-16">
+      <form onSubmit={handleAddCoffee} className="bg-[#F4F3F0] px-32 py-16">
         <div className="text-center">
           <h2 className="font-rancho text-[#374151] text-3xl font-bold blur-[1px]">
             Add New Coffee
@@ -31,6 +66,7 @@ const AddCoffee = () => {
             </div>
             <input
               type="text"
+              name="name"
               placeholder="Enter Coffe Name"
               className="input input-bordered text-gray-200 w-full max-w-lg"
             />
@@ -41,6 +77,7 @@ const AddCoffee = () => {
             </div>
             <input
               type="text"
+              name="chef"
               placeholder="Enter Chef Name"
               className="input input-bordered text-gray-200 w-full max-w-lg"
             />
@@ -53,6 +90,7 @@ const AddCoffee = () => {
             </div>
             <input
               type="text"
+              name="supplier"
               placeholder="Enter Supplier Name"
               className="input input-bordered text-gray-200 w-full max-w-lg"
             />
@@ -63,6 +101,7 @@ const AddCoffee = () => {
             </div>
             <input
               type="text"
+              name="taste"
               placeholder="Enter Coffe Taste"
               className="input input-bordered text-gray-200 w-full max-w-lg"
             />
@@ -75,6 +114,7 @@ const AddCoffee = () => {
             </div>
             <input
               type="text"
+              name="category"
               placeholder="Enter Coffe Category"
               className="input input-bordered text-gray-200 w-full max-w-lg"
             />
@@ -85,6 +125,7 @@ const AddCoffee = () => {
             </div>
             <input
               type="text"
+              name="details"
               placeholder="Enter Coffe Details"
               className="input input-bordered text-gray-200 w-full max-w-lg"
             />
@@ -97,6 +138,7 @@ const AddCoffee = () => {
             </div>
             <input
               type="text"
+              name="photo"
               placeholder="Enter Photo Url"
               className="input input-bordered text-gray-200 w-full"
             />
