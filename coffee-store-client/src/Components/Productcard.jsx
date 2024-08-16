@@ -38,7 +38,7 @@ const Productcard = ({ coff }) => {
   return (
     <div className="card card-side bg-base-100 max-w-xl px-8 py-4 my-4 shadow-xl">
       <figure>
-        <img src={photo} alt="Movie" />
+        <img src={photo} alt="Coffee" />
       </figure>
       <div className="flex justify-center lg:min-w-72 items-center">
         <div className="card-body flex justify-center">
@@ -61,7 +61,7 @@ const Productcard = ({ coff }) => {
           <FaEye />
         </Link>
         <Link
-          to={"/updateCoffee"}
+          to={`/updateCoffee/${_id}`}
           className="h-10 w-10 bg-[#3C393B] my-6 text-white flex items-center justify-center text-xl rounded-md"
         >
           <FaPen />
