@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const UpdateCoffee = () => {
   const data = useLoaderData();
-  const { name, chef, supplier, taste, category, details, photo } = data;
+  const { _id, name, chef, supplier, taste, category, details, photo } = data;
 
   const handleUpdateCoffee = (event) => {
     event.preventDefault();
@@ -19,7 +19,6 @@ const UpdateCoffee = () => {
     const photo = form.photo.value;
 
     const coffeeData = {
-      _id,
       name,
       chef,
       supplier,
