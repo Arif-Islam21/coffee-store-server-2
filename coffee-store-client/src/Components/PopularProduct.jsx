@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const PopularProduct = () => {
   const [coffee, setCoffee] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/coffee")
+    fetch("https://deploy-server-6jdh.onrender.com/coffee")
       .then((res) => res.json())
       .then((data) => {
         setCoffee(data);

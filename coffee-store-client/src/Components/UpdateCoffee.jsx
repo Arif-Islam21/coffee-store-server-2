@@ -28,7 +28,7 @@ const UpdateCoffee = () => {
       photo,
     };
 
-    fetch(`http://localhost:5000/coffee/${_id}`, {
+    fetch(`https://deploy-server-6jdh.onrender.com/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

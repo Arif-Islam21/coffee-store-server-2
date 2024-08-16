@@ -25,7 +25,7 @@ const AddCoffee = () => {
       photo,
     };
 
-    fetch("http://localhost:5000/coffee", {
+    fetch("https://deploy-server-6jdh.onrender.com/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",

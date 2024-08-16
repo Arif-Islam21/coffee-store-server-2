@@ -28,13 +28,13 @@ const router = createBrowserRouter([
         path: "updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffee/${params.id}`),
+          fetch(`https://deploy-server-6jdh.onrender.com/${params.id}`),
       },
       {
         path: "viewCoffee/:id",
         element: <ViewCoffee></ViewCoffee>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffee/${params.id}`),
+          fetch(`https://deploy-server-6jdh.onrender.com/${params.id}`),
       },
     ],
   },
