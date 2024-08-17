@@ -12,6 +12,7 @@ import ViewCoffee from "./Components/ViewCoffee.jsx";
 import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
+import Users from "./Components/Users.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/users",
+        element: <Users></Users>,
       },
     ],
   },

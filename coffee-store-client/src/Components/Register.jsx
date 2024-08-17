@@ -13,8 +13,8 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        const createdAt = result.user.metadata.creationTime;
-        const user = { email, createdAt };
+        const createdAt = result.user?.metadata?.creationTime;
+        const user = { email, createdAt: createdAt };
         fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
