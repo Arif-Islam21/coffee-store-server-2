@@ -15,7 +15,7 @@ const Register = () => {
         console.log(result.user);
         const createdAt = result.user?.metadata?.creationTime;
         const user = { email, createdAt: createdAt };
-        fetch("http://localhost:5000/users", {
+        fetch("https://deploy-server-6jdh.onrender.com/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

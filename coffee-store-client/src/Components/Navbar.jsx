@@ -1,30 +1,61 @@
-import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import { SiCoffeescript } from "react-icons/si";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ background: "#6f4e37" }} position="static">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            className="text-center"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+    <div className="navbar lg:pl-[40vw] text-white font-rancho bg-[#331A15]">
+      <div className="flex-1">
+        <a className="btn btn-ghost lg:text-4xl border-2 text-xl">
+          <SiCoffeescript />
+          Espresso Emporium
+        </a>
+      </div>
+      <div className="flex-none">
+        <div className="dropdown dropdown-end">
+          <div
+            tabIndex={0}
+            className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
+          ></div>
+        </div>
+        <div className="dropdown dropdown-end">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar"
           >
-            <div className="flex justify-center gap-2 items-center">
-              <SiCoffeescript />
-              <span className="font-rancho font-bold">Espresso Emporium</span>
+            <div className="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS Navbar component"
+                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+              />
             </div>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu bg-[#331A15] menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          >
+            <li>
+              <Link to={"/addCoffee"} className="justify-between">
+                addCoffee
+              </Link>
+            </li>
+            <li>
+              <Link to={"/login"}>Login</Link>
+            </li>
+            <li>
+              <Link to={"/register"}>Register</Link>
+            </li>
+            <li>
+              <Link to={"/users"}>Users</Link>
+            </li>
+            <li>
+              <a>Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default Navbar;

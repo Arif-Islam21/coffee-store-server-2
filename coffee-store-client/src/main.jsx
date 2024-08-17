@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element: <Users></Users>,
-        loader: () => fetch("http://localhost:5000/users"),
+        loader: () => fetch("https://deploy-server-6jdh.onrender.com/users"),
       },
     ],
   },
