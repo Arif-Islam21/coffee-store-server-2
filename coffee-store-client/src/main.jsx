@@ -9,6 +9,9 @@ import UpdateCoffee from "./Components/UpdateCoffee.jsx";
 import Homepage from "./Components/Homepage.jsx";
 import ErrorElement from "./Components/ErrorElement.jsx";
 import ViewCoffee from "./Components/ViewCoffee.jsx";
+import Login from "./Components/Login.jsx";
+import Register from "./Components/Register.jsx";
+import AuthProvider from "./Provider/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,12 +39,22 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://deploy-server-6jdh.onrender.com/${params.id}`),
       },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );
