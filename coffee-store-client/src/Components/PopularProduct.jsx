@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const PopularProduct = () => {
   const [coffee, setCoffee] = useState();
   useEffect(() => {
-    fetch("https://deploy-server-6jdh.onrender.com/coffee")
+    fetch(`${import.meta.env.VITE_SERVER_API}/coffee`)
       .then((res) => res.json())
       .then((data) => {
         setCoffee(data);

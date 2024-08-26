@@ -25,7 +25,7 @@ const AddCoffee = () => {
       photo,
     };
 
-    fetch("https://deploy-server-6jdh.onrender.com/coffee", {
+    fetch(`${import.meta.env.VITE_SERVER_API}/coffee`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

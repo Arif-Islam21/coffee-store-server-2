@@ -7,7 +7,7 @@ const Users = () => {
   const [users, setUsers] = useState(loadedUser);
 
   const handleDelete = (id) => {
-    fetch(`https://deploy-server-6jdh.onrender.com/users/${id}`, {
+    fetch(`${import.meta.env.VITE_SERVER_API}/users/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

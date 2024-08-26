@@ -28,7 +28,7 @@ const UpdateCoffee = () => {
       photo,
     };
 
-    fetch(`https://deploy-server-6jdh.onrender.com/${_id}`, {
+    fetch(`${import.meta.env.VITE_SERVER_API}/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

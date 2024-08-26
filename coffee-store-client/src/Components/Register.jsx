@@ -15,7 +15,7 @@ const Register = () => {
         console.log(result.user);
         const createdAt = result.user?.metadata?.creationTime;
         const user = { email, createdAt: createdAt };
-        fetch("https://deploy-server-6jdh.onrender.com/users", {
+        fetch(`${import.meta.env.VITE_SERVER_API}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

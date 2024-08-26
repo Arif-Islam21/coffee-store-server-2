@@ -17,7 +17,7 @@ const Productcard = ({ coff, setCoffee, coffee }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://deploy-server-6jdh.onrender.com/${_id}`, {
+        fetch(`${import.meta.env.VITE_SERVER_API}/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

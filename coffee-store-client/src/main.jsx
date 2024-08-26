@@ -13,6 +13,7 @@ import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import Users from "./Components/Users.jsx";
+import PrivateRoute from "./Components/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,13 +33,13 @@ const router = createBrowserRouter([
         path: "updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
-          fetch(`https://deploy-server-6jdh.onrender.com/${params.id}`),
+          fetch(`${import.meta.env.VITE_SERVER_API}/${params.id}`),
       },
       {
         path: "viewCoffee/:id",
         element: <ViewCoffee></ViewCoffee>,
         loader: ({ params }) =>
-          fetch(`https://deploy-server-6jdh.onrender.com/${params.id}`),
+          fetch(`${import.meta.env.VITE_SERVER_API}/${params.id}`),
       },
       {
         path: "/login",
@@ -50,8 +51,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        element: <Users></Users>,
-        loader: () => fetch("https://deploy-server-6jdh.onrender.com/users"),
+        element: (
+          <PrivateRoute>
+            <Users></Users>
+          </PrivateRoute>
+        ),
+        loader: () => fetch(`${import.meta.env.VITE_SERVER_API}/users`),
       },
     ],
   },
