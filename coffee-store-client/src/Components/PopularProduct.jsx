@@ -2,15 +2,24 @@ import { BiSolidCoffee } from "react-icons/bi";
 import Productcard from "./Productcard";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const PopularProduct = () => {
   const [coffee, setCoffee] = useState();
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_SERVER_API}/coffee`)
-      .then((res) => res.json())
+    axios
+      .get(`${import.meta.env.VITE_SERVER_API}/coffee`, {
+        withCredentials: true,
+      })
       .then((data) => {
-        setCoffee(data);
+        console.log(data.data);
       });
+
+    // fetch(`${import.meta.env.VITE_SERVER_API}/coffee`, { credentials: true })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setCoffee(data);
+    //   });
   }, []);
 
   return (

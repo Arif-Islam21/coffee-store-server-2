@@ -56,6 +56,7 @@ async function run() {
     const userCollection = client.db("coffeeMasterDb").collection("userData");
 
     app.get("/coffee", async (req, res) => {
+      const token = req.cookies.token;
       const data = coffeeCollection.find();
       const result = await data.toArray();
       res.send(result);
