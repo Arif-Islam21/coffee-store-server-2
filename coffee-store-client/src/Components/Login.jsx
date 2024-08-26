@@ -16,9 +16,11 @@ const Login = () => {
         console.log(result.user);
 
         const person = { email };
-        axios.post("http://localhost:5000/jwt", person).then((data) => {
-          console.log(data.data);
-        });
+        axios
+          .post("http://localhost:5000/jwt", person, { withCredentials: true })
+          .then((data) => {
+            console.log(data.data);
+          });
 
         const user = {
           email,
