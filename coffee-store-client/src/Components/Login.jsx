@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
@@ -13,6 +14,12 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
+
+        const person = { email };
+        axios.post("http://localhost:5000/jwt", person).then((data) => {
+          console.log(data.data);
+        });
+
         const user = {
           email,
           lastLoggedAt: result.user?.metadata?.lastSignInTime,
