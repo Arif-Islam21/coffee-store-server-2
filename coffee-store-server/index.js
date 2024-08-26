@@ -16,6 +16,20 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
+// custom middleware
+const verifyToken = async (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).send({ message: "unAuthorized" });
+  }
+  jwt.verify(token, process.env.TOKEN_KEY, (err, decoded) => {
+    if (err) {
+      return res.status(401).send({ message: "unAuthorized" });
+    }
+    req.user = decoded;
+    next();
+  });
+};
 
 // coffeeMaster
 // CRccCXFOqSvpQzhb
@@ -55,8 +69,11 @@ async function run() {
       .collection("coffeeData");
     const userCollection = client.db("coffeeMasterDb").collection("userData");
 
-    app.get("/coffee", async (req, res) => {
+    app.get("/coffee", verifyToken, async (req, res) => {
       const token = req.cookies.token;
+      console.log("user email", token);
+      const token2 = req.user.email;
+      console.log("decoded email", token2);
       const data = coffeeCollection.find();
       const result = await data.toArray();
       res.send(result);
