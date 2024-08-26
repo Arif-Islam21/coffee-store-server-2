@@ -31,12 +31,6 @@ const verifyToken = async (req, res, next) => {
   });
 };
 
-// coffeeMaster
-// CRccCXFOqSvpQzhb
-
-// const uri =
-//   "mongodb+srv://coffeeMaster:CRccCXFOqSvpQzhb@cluster0.n7e36sw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
 const uri = `mongodb+srv://${process.env.SERVER_NAME}:${process.env.SERVER_PASS}@cluster0.n7e36sw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version

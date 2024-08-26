@@ -5,6 +5,7 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_apiKey);
 const firebaseConfig = {
   apiKey: "AIzaSyCDzmkgpfCcOZyr3hQH_5_nxxGTHs9QlM8",
   authDomain: "coffee-store-recap-25a34.firebaseapp.com",
